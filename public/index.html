@@ -1,31 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Converter</title>
+    <title>Conversor de Arquivos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>File Converter</h1>
+        <h1>NOTRE CONVERSOR</h1>
         <div class="file-input-container">
-            <label for="inputFile" class="label">Select Files to Convert:</label>
+            <label for="inputFile" class="label">1. Selecione os Arquivos para Conversão (Formatos aceitos - PDF, JPG, PNG E TXT):</label>
             <input type="file" id="inputFile" class="input-field" accept=".pdf, .png, .jpg, .jpeg, .txt" multiple>
         </div>
+        <div class="file-input-container">
+            <h6 class="label">2. Escolha a pasta que deseja guardar os Arquivos Convertidos:</h6>
+            <button id="selectFolderButton" class="button"><i class="fas fa-folder-open"></i> Selecionar Pasta</button>
+        </div>
+      
         <div class="select-container">
-            <label for="outputFormat" class="label">Choose Output Format:</label>
+            <label for="outputFormat" class="label">3. Escolha o Formato para Conversão:</label>
             <select id="outputFormat" class="select">
-                <option value="jpg">Convert to JPG</option>
-                <option value="png">Convert to PNG</option>
-                <option value="txt">Convert to TXT</option>
-                <option value="pdf">Convert to PDF</option>
+                <option value="jpg">Converter para JPG</option>
+                <option value="png">Converter para PNG</option>
+                <option value="txt">Converter para TXT</option>
+                <option value="pdf">Converter para PDF</option>
             </select>
         </div>
         <div class="button-container">
-            <button id="selectFolderButton" class="button"><i class="fas fa-folder-open"></i> Select Folder</button>
-            <button id="convertButton" class="button"><i class="fas fa-file-import"></i> Convert</button>
+            <h6 class="label">4. Clique no botão para converter os arquivos:</h6>
+            <button id="convertButton" class="button"><i class="fas fa-file-import"></i> Converter</button>
         </div>
         <div id="folderName" class="info"></div>
         <div id="message" class="info"></div>

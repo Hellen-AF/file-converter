@@ -21,12 +21,16 @@ h1 {
   color: #333;
   margin-bottom: 20px;
 }
+h6{
+  margin-top: 0;
+}
 .label {
   display: block;
   font-size: 14px;
   color: #555;
   margin-bottom: 5px;
   text-align: left;
+  font-weight: normal;
 }
 .input-field,
 .select {
@@ -38,9 +42,9 @@ h1 {
   border-radius: 5px;
 }
 .button-container {
-  display: flex;
+  display: block;
   justify-content: space-between;
-  gap: 10px;
+  justify-content: center;
 }
 .button {
   background-color: #007bff;
@@ -50,6 +54,7 @@ h1 {
   border-radius: 5px;
   cursor: pointer;
   width: 48%;
+  margin-bottom: 15px;
 }
 .button:hover {
   background-color: #0056b3;
