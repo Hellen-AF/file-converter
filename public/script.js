@@ -11,7 +11,7 @@ document.getElementById('convertButton').addEventListener('click', async () => {
     messageDiv.textContent = '';
 
     if (!outputDirectoryHandle) {
-        messageDiv.textContent = 'Por favor, selecione uma pasta primeiro';
+        messageDiv.textContent = 'Por favor, selecione uma pasta primeiro.';
         return;
     }
 
@@ -21,7 +21,7 @@ document.getElementById('convertButton').addEventListener('click', async () => {
     output.innerHTML = '';
 
     if (fileInput.files.length === 0) {
-        messageDiv.textContent = 'Por favor, selecione os arquivos';
+        messageDiv.textContent = 'Por favor, selecione os arquivos.';
         return;
     }
 
@@ -37,12 +37,12 @@ document.getElementById('convertButton').addEventListener('click', async () => {
         } else if (fileType === 'text/plain') {
             await convertText(file, outputFormat, outputDirectoryHandle);
         } else {
-            messageDiv.textContent = 'Unsupported file type: ' + file.name;
+            messageDiv.textContent = 'Tipo de arquivo insuportado: ' + file.name;
             return;
         }
     }
 
-    messageDiv.textContent = 'Conversão completada. Verifique a pasta';
+    messageDiv.textContent = 'Conversão completada. Verifique a pasta.';
 });
 
 async function convertPdf(file, outputFormat, outputDirectoryHandle) {
