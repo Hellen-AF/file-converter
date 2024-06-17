@@ -11,7 +11,7 @@ document.getElementById('convertButton').addEventListener('click', async () => {
     messageDiv.textContent = '';
 
     if (!outputDirectoryHandle) {
-        messageDiv.textContent = 'Please select a folder first';
+        messageDiv.textContent = 'Por favor, selecione uma pasta primeiro';
         return;
     }
 
@@ -21,11 +21,11 @@ document.getElementById('convertButton').addEventListener('click', async () => {
     output.innerHTML = '';
 
     if (fileInput.files.length === 0) {
-        messageDiv.textContent = 'Please select files';
+        messageDiv.textContent = 'Por favor, selecione os arquivos';
         return;
     }
 
-    messageDiv.textContent = 'Conversion in progress...';
+    messageDiv.textContent = 'Conversão em progresso...';
 
     for (const file of fileInput.files) {
         const fileType = file.type;
@@ -42,7 +42,7 @@ document.getElementById('convertButton').addEventListener('click', async () => {
         }
     }
 
-    messageDiv.textContent = 'Conversion completed. Check the selected folder for the converted files.';
+    messageDiv.textContent = 'Conversão completada. Verifique a pasta';
 });
 
 async function convertPdf(file, outputFormat, outputDirectoryHandle) {
