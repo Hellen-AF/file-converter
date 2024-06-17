@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>File Converter</h1>
+        <div class="file-input-container">
+            <label for="inputFile" class="label">Select Files to Convert:</label>
+            <input type="file" id="inputFile" class="input-field" accept=".pdf, .png, .jpg, .jpeg, .txt" multiple>
+        </div>
+        <div class="select-container">
+            <label for="outputFormat" class="label">Choose Output Format:</label>
+            <select id="outputFormat" class="select">
+                <option value="jpg">Convert to JPG</option>
+                <option value="png">Convert to PNG</option>
+                <option value="txt">Convert to TXT</option>
+                <option value="pdf">Convert to PDF</option>
+            </select>
+        </div>
+        <div class="button-container">
+            <button id="selectFolderButton" class="button"><i class="fas fa-folder-open"></i> Select Folder</button>
+            <button id="convertButton" class="button"><i class="fas fa-file-import"></i> Convert</button>
+        </div>
+        <div id="folderName" class="info"></div>
+        <div id="message" class="info"></div>
+        <div id="output"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.5.207/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="/public/script.js"></script>
+</body>
+</html>
