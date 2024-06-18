@@ -3,7 +3,7 @@ let outputDirectoryHandle;
 document.getElementById('selectFolderButton').addEventListener('click', async () => {
     outputDirectoryHandle = await window.showDirectoryPicker();
     const folderNameDiv = document.getElementById('folderName');
-    folderNameDiv.textContent = `Selected folder: ${outputDirectoryHandle.name}`;
+    folderNameDiv.textContent = `Pasta selecionada: ${outputDirectoryHandle.name}`;
 });
 
 document.getElementById('convertButton').addEventListener('click', async () => {
