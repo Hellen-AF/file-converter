@@ -9,7 +9,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>NOTRE CONVERTER</h1>
+        <header class="header">
+            <img src="/img/brasão completo (1).png" alt="Logo" class="logo">
+            <h1>NOTRE CONVERTER</h1>
+        </header>
         <div class="file-input-container">
             <label for="inputFile" class="label">1. Selecione os Arquivos para Conversão (Formatos aceitos - PDF, JPG, PNG E TXT):</label>
             <input type="file" id="inputFile" class="input-field" accept=".pdf, .png, .jpg, .jpeg, .txt" multiple>
@@ -22,7 +25,7 @@
         <div class="select-container">
             <label for="outputFormat" class="label">3. Escolha o Formato para Conversão:</label>
             <select id="outputFormat" class="select">
-                <option value="jpg">Converter para JPG</option>
+                <option value="jpg" class="center-option">---</option>
                 <option value="png">Converter para PNG</option>
                 <option value="txt">Converter para TXT</option>
                 <option value="pdf">Converter para PDF</option>

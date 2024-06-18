@@ -1,5 +1,5 @@
 body {
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #f4f4f9;
   margin: 0;
   padding: 0;
@@ -8,77 +8,90 @@ body {
   align-items: center;
   height: 100vh;
 }
+
 .container {
-  background-color: #fff;
+  width: 80%;
+  max-width: 600px;
+  background: white;
   padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
-  text-align: center;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #003e51, #003e51);
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+}
+
+.logo {
+  width: 50px;
+  height: 65px;
+  margin-right: 15px;
+}
+
 h1 {
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 24px;
+  color: white;
+  margin: 0;
 }
-h6{
-  margin-top: 0;
-}
+
 .label {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 10px;
   display: block;
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 5px;
-  text-align: left;
-  font-weight: normal;
+  color: #333;
 }
-.input-field,
-.select {
+
+.input-field, .select, .button {
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Add this to include padding and border in the element's total width and height */
+}
+
+.input-field {
+  display: block; /* Ensure the input field is treated as a block element */
+}
+
+.button {
+  background-color: #003e51;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #003e51;
+}
+
+.info {
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+  margin-top: 20px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  background-color: #f9f9f9;
 }
-.button-container {
-  display: block;
-  justify-content: space-between;
-  justify-content: center;
+
+#folderName, #message, #output {
+  margin-bottom: 20px;
 }
-.button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 48%;
-  margin-bottom: 15px;
+
+.file-input-container, .select-container, .button-container {
+  margin-bottom: 20px;
 }
-.button:hover {
-  background-color: #0056b3;
-}
-.info-container {
-  margin-top: 20px;
-  text-align: left;
-}
-.info-title {
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 5px;
-}
-.info {
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #555;
-}
-.info-output {
-  background-color: #e9ecef;
-  padding: 10px;
-  border-radius: 5px;
-  color: #333;
+
+i {
+  margin-right: 10px;
 }
