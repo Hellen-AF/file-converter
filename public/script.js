@@ -1,13 +1,9 @@
 let outputDirectoryHandle;
 
 document.getElementById('selectFolderButton').addEventListener('click', async () => {
-    try {
-        const outputDirectoryHandle = await window.showDirectoryPicker();
-        const folderNameDiv = document.getElementById('folderName');
-        folderNameDiv.textContent = `Pasta selecionada: ${outputDirectoryHandle.name}`;
-    } catch (error) {
-        console.error('Erro ao selecionar pasta:', error);
-    }
+    outputDirectoryHandle = await window.showDirectoryPicker();
+    const folderNameDiv = document.getElementById('folderName');
+    folderNameDiv.textContent = `Pasta selecionada: ${outputDirectoryHandle.name}`;
 });
 
 document.getElementById('convertButton').addEventListener('click', async () => {
