@@ -9,6 +9,10 @@ html, body {
   align-items: center;
 }
 
+body {
+  overflow: hidden; /* Remove rolagem global */
+}
+
 .container-merge {
   width: 100%;
   max-width: 600px;
@@ -16,118 +20,118 @@ html, body {
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   border-radius: 10px;
+  box-sizing: border-box;
 }
-  
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    background: linear-gradient(45deg, #003e51, #003e51);
-    padding: 20px;
-    border-radius: 10px 10px 0 0;
-  }
 
-  .logo {
-    width: 50px;
-    height: 65px;
-    margin-right: 15px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    color: white;
-    margin: 0;
-  }
-  
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    display: block;
-  }
-  
-  .button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    background-color: #003e51;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .button:hover {
-    background-color: #002640;
-  }
-  
-  .back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: #003e51;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-decoration: none;
-  }
-  
-  .back-button:hover {
-    background-color: #002640;
-  }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #003e51, #003e51);
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+}
 
-  
-  .info {
-    font-size: 14px;
-    text-align: center;
-    color: #555;
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    }
-  
-  #pdfViewer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .pageWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .pageWrapper canvas {
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    margin-top: 10px;
-    width: 150px;
-    height: auto;
-  }
-  
-  .pageCheckbox {
-    margin-bottom: 5px;
-  }
-  
-  label {
-    font-size: 1em;
-    color: #343a40;
-    margin-bottom: 10px;
-  }
-  
+.logo {
+  width: 50px;
+  height: 65px;
+  margin-right: 15px;
+}
+
+h1 {
+  font-size: 24px;
+  color: white;
+  margin: 0;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  display: block;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #003e51;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #002640;
+}
+
+.back-button {
+  position: fixed; /* Mantém o botão fixo no canto superior esquerdo */
+  top: 20px;
+  left: 20px;
+  background-color: #003e51;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #002640;
+}
+
+.info {
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#pdfViewer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-height: 450px; /* Limita a altura para 3 linhas */
+  overflow-y: auto; /* Adiciona rolagem interna */
+}
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pageWrapper canvas {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100px;
+  height: auto;
+}
+
+.pageCheckbox {
+  margin-bottom: 5px;
+}
+
+label {
+  font-size: 1em;
+  color: #343a40;
+  margin-bottom: 10px;
+}

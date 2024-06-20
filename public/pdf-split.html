@@ -3,26 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juntar e Dividir PDFs</title>
+    <title>Dividir PDF</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/pdf-split.css">
 </head>
 <body class="container">
-
-    <div class="container">
-        <button class="back-button" onclick="history.back()">← Voltar</button>
-        <div class="container-merge">
-            <div class="header">
-                <img src="/img/brasão completo (1).png" alt="Logo" class="logo">
-                <h1>Dividir PDF</h1>
-            </div>
-            <input type="file" id="splitInput" class="input-field">
-            <div id="pdfViewer"></div>
-            <button id="splitButton" class="button">Dividir</button>
-            <p id="splitMessage" class="info"></p>
+    <button class="back-button" onclick="history.back()">← Voltar</button>
+    <div class="container-merge">
+        <div class="header">
+            <img src="/img/brasão completo (1).png" alt="Logo" class="logo">
+            <h1>Dividir PDF</h1>
         </div>
+        <input type="file" id="splitInput" class="input-field">
+        <div id="pdfViewer"></div>
+        <button id="splitButton" class="button">Dividir</button>
+        <p id="splitMessage" class="info"></p>
     </div>
-    
     <!-- Biblioteca PDF.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <!-- Biblioteca PDF-Lib -->
