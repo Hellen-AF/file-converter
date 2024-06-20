@@ -8,16 +8,15 @@
     <link rel="stylesheet" href="/public/css/pdf-merge.css">
 </head>
 <body class="container">
-    <div class="container">
-        <div class="container-merge">
-            <div class="header">
-                    <img src="../img/brasão completo (1).png" alt="Logo" class="logo">
-                    <h1>Juntar PDFs</h1>
-            </div>
-            <input type="file" id="mergeInput" multiple class="input-field">
-            <button id="mergeButton" class="button">Juntar</button>
-            <p id="mergeMessage" class="info"></p>
+    <button class="back-button" onclick="history.back()">← Voltar</button>
+    <div class="container-merge">
+        <div class="header">
+            <img src="../img/brasão completo (1).png" alt="Logo" class="logo">
+            <h1>Juntar PDFs</h1>
         </div>
+        <input type="file" id="mergeInput" multiple class="input-field">
+        <button id="mergeButton" class="button">Juntar</button>
+        <p id="mergeMessage" class="info"></p>
     </div>
     <!-- Biblioteca PDF.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>

@@ -10,7 +10,7 @@ html, body {
 }
 
 .container-merge {
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   background: white;
   padding: 20px;
@@ -63,6 +63,24 @@ h1 {
 }
 
 .button:hover {
+  background-color: #002640;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #003e51;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.back-button:hover {
   background-color: #002640;
 }
 
