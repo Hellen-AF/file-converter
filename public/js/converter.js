@@ -30,14 +30,20 @@ document.getElementById('convertButton').addEventListener('click', async () => {
     for (const file of fileInput.files) {
         const fileType = file.type;
 
-        if (fileType === 'application/pdf') {
-            await convertPdf(file, outputFormat, outputDirectoryHandle);
-        } else if (fileType.startsWith('image/')) {
-            await convertImage(file, outputFormat, outputDirectoryHandle);
-        } else if (fileType === 'text/plain') {
-            await convertText(file, outputFormat, outputDirectoryHandle);
-        } else {
-            messageDiv.textContent = 'Tipo de arquivo insuportado: ' + file.name;
+        try {
+            if (fileType === 'application/pdf') {
+                await convertPdf(file, outputFormat, outputDirectoryHandle);
+            } else if (fileType.startsWith('image/')) {
+                await convertImage(file, outputFormat, outputDirectoryHandle);
+            } else if (fileType === 'text/plain') {
+                await convertText(file, outputFormat, outputDirectoryHandle);
+            } else {
+                messageDiv.textContent = 'Tipo de arquivo não suportado: ' + file.name;
+                return;
+            }
+        } catch (error) {
+            messageDiv.textContent = 'Erro durante a conversão do arquivo: ' + file.name + '. ' + error.message;
+            console.error(error);
             return;
         }
     }
@@ -92,17 +98,31 @@ async function convertImage(file, outputFormat, outputDirectoryHandle) {
     reader.onload = async (event) => {
         const img = new Image();
         img.onload = async () => {
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            context.drawImage(img, 0, 0);
-            const newImg = canvas.toDataURL(`image/${outputFormat}`);
-            const response = await fetch(newImg);
-            const blob = await response.blob();
-            await saveFile(outputDirectoryHandle, `${file.name.split('.').slice(0, -1).join('.')}-converted.${outputFormat}`, blob);
+            if (outputFormat === 'pdf') {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                const width = doc.internal.pageSize.getWidth();
+                const height = doc.internal.pageSize.getHeight();
+                doc.addImage(img, 'JPEG', 0, 0, width, height);
+                const pdf = doc.output('blob');
+                await saveFile(outputDirectoryHandle, `${file.name.split('.').slice(0, -1).join('.')}-converted.pdf`, pdf);
+            } else {
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                context.drawImage(img, 0, 0);
+                const newImg = canvas.toDataURL(`image/${outputFormat}`);
+                const response = await fetch(newImg);
+                const blob = await response.blob();
+                await saveFile(outputDirectoryHandle, `${file.name.split('.').slice(0, -1).join('.')}-converted.${outputFormat}`, blob);
+            }
         };
         img.src = event.target.result;
+    };
+
+    reader.onerror = (error) => {
+        console.error('Erro ao ler a imagem:', error);
     };
 
     reader.readAsDataURL(file);
@@ -124,6 +144,10 @@ async function convertText(file, outputFormat, outputDirectoryHandle) {
             const pdf = doc.output('blob');
             await saveFile(outputDirectoryHandle, `${file.name.split('.').slice(0, -1).join('.')}-converted.pdf`, pdf);
         }
+    };
+
+    reader.onerror = (error) => {
+        console.error('Erro ao ler o texto:', error);
     };
 
     reader.readAsText(file);

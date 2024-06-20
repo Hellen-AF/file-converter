@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Arquivos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/public/css/converter.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="../img/brasão completo (1).png" alt="Logo" class="logo">
+            <h1>NOTRE CONVERTER</h1>
+        </header>
+        <div class="file-input-container">
+            <label for="inputFile" class="label">1. Selecione os Arquivos para Conversão (Formatos aceitos - PDF, JPG, PNG E TXT):</label>
+            <input type="file" id="inputFile" class="input-field" accept=".pdf, .png, .jpg, .jpeg, .txt" multiple>
+        </div>
+        <div class="file-input-container">
+            <h6 class="label">2. Escolha a pasta que deseja guardar os Arquivos Convertidos:</h6>
+            <button id="selectFolderButton" class="button"><i class="fas fa-folder-open"></i> Selecionar Pasta</button>
+        </div>
+      
+        <div class="select-container">
+            <label for="outputFormat" class="label">3. Escolha o Formato para Conversão:</label>
+            <select id="outputFormat" class="select">
+                <option value="" class="center-option">---</option>
+                <option value="jpg">Converter para JPG</option>
+                <option value="png">Converter para PNG</option>
+                <option value="txt">Converter para TXT</option>
+                <option value="pdf">Converter para PDF</option>
+            </select>
+        </div>
+        <div class="button-container">
+            <h6 class="label">4. Clique no botão para converter os arquivos:</h6>
+            <button id="convertButton" class="button"><i class="fas fa-file-import"></i> Converter</button>
+        </div>
+        <div id="folderName" class="info"></div>
+        <div id="message" class="info"></div>
+        <div id="output"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.5.207/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="/public/js/converter.js"></script>
+</body>
+</html>

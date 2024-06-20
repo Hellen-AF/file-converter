@@ -1,47 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Arquivos</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="/public/css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header class="header">
             <img src="../img/brasão completo (1).png" alt="Logo" class="logo">
-            <h1>NOTRE CONVERTER</h1>
+            <h1>Bem-vindo ao Gerenciador de Arquivos</h1>
         </header>
-        <div class="file-input-container">
-            <label for="inputFile" class="label">1. Selecione os Arquivos para Conversão (Formatos aceitos - PDF, JPG, PNG E TXT):</label>
-            <input type="file" id="inputFile" class="input-field" accept=".pdf, .png, .jpg, .jpeg, .txt" multiple>
+        <div class="options">
+            <div class="option" onclick="location.href='/public/pdf-split.html'">
+                <h2>Dividir PDF</h2>
+                <p>Separe páginas específicas de um documento PDF.</p>
+            </div>
+            <div class="option" onclick="location.href='/public/pdf-merge.html'">
+                <h2>Juntar PDFs</h2>
+                <p>Combine vários documentos PDF em um único arquivo.</p>
+            </div>
+            <div class="option" onclick="location.href='/public/converter.html'">
+                <h2>Converter Arquivos</h2>
+                <p>Converta arquivos para PDF e vice-versa.</p>
+            </div>
         </div>
-        <div class="file-input-container">
-            <h6 class="label">2. Escolha a pasta que deseja guardar os Arquivos Convertidos:</h6>
-            <button id="selectFolderButton" class="button"><i class="fas fa-folder-open"></i> Selecionar Pasta</button>
-        </div>
-      
-        <div class="select-container">
-            <label for="outputFormat" class="label">3. Escolha o Formato para Conversão:</label>
-            <select id="outputFormat" class="select">
-                <option value="" class="center-option">---</option>
-                <option value="jpg">Converter para JPG</option>
-                <option value="png">Converter para PNG</option>
-                <option value="txt">Converter para TXT</option>
-                <option value="pdf">Converter para PDF</option>
-            </select>
-        </div>
-        <div class="button-container">
-            <h6 class="label">4. Clique no botão para converter os arquivos:</h6>
-            <button id="convertButton" class="button"><i class="fas fa-file-import"></i> Converter</button>
-        </div>
-        <div id="folderName" class="info"></div>
-        <div id="message" class="info"></div>
-        <div id="output"></div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.5.207/pdf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
